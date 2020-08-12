@@ -139,18 +139,26 @@
       step: 1,
       range: "min",
       slide: function () {
-        a.button_pause.click(); //isn't supposed to activate pause when slider used?
+        a.button_pause.click(); //isn't supposed to activate pause when slider used?*/
+        setTimeout(function () {
+          startCounterSecTimeout(t, e, a);
+        }, 0);
       },
       stop: function (s, i) {
         (a.counterSec = i.value),
           t.find(".jsvp-audioPlayerWrapper").html("blank"),
           t.find(".jsvp-load_progress").val(0),
-          a.button_play.click(),
+          a.button_pause.click(), //play
           (a.flagJumpAudio = !0),
           jumpAudio(t, e, a),
           setTimeout(function () {
-            a.button_pause.click();
-          }, 20);
+            startCounterSecTimeout(
+              t,
+              e,
+              a
+            ); /*
+            a.button_pause.click();*/
+          }, 0); //before value was 20
       },
     });
 
@@ -403,8 +411,8 @@
   };
 })(jQuery);
 
-playerInnerWrapper.addEventListener("click", function () {
+/*playerInnerWrapper.addEventListener("click", function () {
   if ((flagPlayPause = !0)) {
     button_pause.click();
   }
-});
+});*/
