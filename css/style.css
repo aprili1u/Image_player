@@ -76,13 +76,25 @@ header .logo {
   line-height: 35px;
   margin: 20px 0 10px;
 }
+.stepsToUse h5 {
+  font-size: 1.8em;
+  font-weight: 600;
+  font-weight: normal;
+  color: #4a5853;
+  line-height: 30px;
+  margin: 20px 0 10px;
+}
 .stepsToUse p {
   font-weight: 400;
   color: #869690;
   margin-bottom: 10px;
+  text-indent: 40px;
 }
 
 .contBg1 {
+  background: #e8effd;
+}
+#questionnaire {
   background: #e8effd;
 }
 .contBg1 p {

@@ -62,7 +62,7 @@
       (l += '<input type="text" class="jsvp-tot" />'),
       (l += '<div class="jsvp-video_controls">'),
       (l +=
-        '<input type="text" min="0" max="100" step="2" class="jsvp-current_time" value="0000" />'),
+        '<input type="text" min="0" max="100" step="2" class="jsvp-current_time" value="00:00" />'),
       (l +=
         '<input type="text" min="0" max="100" step="2" class="jsvp-LoadProgressFlag" value="false" />'),
       (l +=

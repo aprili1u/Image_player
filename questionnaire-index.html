@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Questionnaire</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/questoinnaire_style.css" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/jquery-image-player-min.css"
+    />
+    <link type="text/css" rel="stylesheet" href="css/d1.css" />
+    <script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/questionnaire.js"></script>
+    <!--<script type="text/javascript" src="js/jquery-image-player-min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>-->
+    <script>
+      $(function () {
+        $("input").checkboxradio();
+      });
+    </script>
+  </head>
+  <body>
+    <section class="contentWrapper">
+      <section class="stepsToUse">
+        <h4>Questionnaire</h4>
+        <p>
+          In the following you will be shown a video clip, which displays one or
+          multiple fish. In the case of multiple fish, please focus only on the
+          individual marked with "A". You will be asked to describe every
+          behavior individual A displays during the clip. It might also be the
+          case that no discernible behavior occurs throughout the clip. To
+          indicate when you see a behavior, please click on the screen and
+          select the marker "beginning" at the time in the clip when a behavior
+          starts. Click on the video again and select the marker "end" at the
+          time in the clip when the behavior is over. The markers can be removed
+          and changed in case you want to select a different time. Once you have
+          identified the time frame during which a behavior occurs, you will be
+          asked to name the behavior, and subsequently be asked questions about
+          the behavior. Afterwards, you will be able to revisit your first
+          naming of the behavior. Please select the answer that fits the
+          behavior best. The following questions are referring to the time in
+          the clip within the markers that set beginning and end of the
+          behaviour. You can re-watch the video clips if you want to.
+        </p>
+        <form id="questionnaire" action="">
+          <div class="tab">
+            Q1
+            <h5>Individual A's behaviour</h5>
+            <p>
+              <input
+                placeholder="Name of the Behavior"
+                oninput="this.className=''"
+              />
+            </p>
+          </div>
+          <div class="tab">
+            Q2
+            <h5>Individual B's behaviour</h5>
+            <p>
+              <input
+                placeholder="Name of the Behavior"
+                oninput="this.className=''"
+              />
+            </p>
+          </div>
+          <div class="tab">
+            Q3
+            <h5>Individual B's behaviour</h5>
+            <p>
+              <input
+                placeholder="Name of the Behavior"
+                oninput="this.className=''"
+              />
+            </p>
+          </div>
+          <div class="tab">
+            Q4
+            <h5>Individual B's behaviour</h5>
+            <p>
+              <input
+                placeholder="Name of the Behavior"
+                oninput="this.className=''"
+              />
+            </p>
+          </div>
+          <!--<div class="tab">
+            
+              <h5>Is individual A moving?</h5>
+              <label for="checkbox-1">Yes</label>
+              <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+              <label for="checkbox-2">No</label>
+              <input type="checkbox" name="checkbox-2" id="checkbox-2" />
+              <label for="checkbox-3">I don't know</label>
+              <input type="checkbox" name="checkbox-3" id="checkbox-3" />
+            
+              <h5>
+                With which individual(s) is A interacting? (Multiple Answers are
+                possible)
+              </h5>
+              <label for="checkbox-nested-1"
+                >B
+                <input
+                  type="checkbox"
+                  name="checkbox-nested-1"
+                  id="checkbox-nested-1"
+                />
+              </label>
+              <label for="checkbox-nested-2"
+                >C
+                <input
+                  type="checkbox"
+                  name="checkbox-nested-2"
+                  id="checkbox-nested-2"
+                />
+              </label>
+              <label for="checkbox-nested-3"
+                >D
+                <input
+                  type="checkbox"
+                  name="checkbox-nested-3"
+                  id="checkbox-nested-3"
+                />
+              </label>
+              <label for="checkbox-nested-4"
+                >None
+                <input
+                  type="checkbox"
+                  name="checkbox-nested-4"
+                  id="checkbox-nested-4"
+                />
+              </label>
+            </fieldset>
+          </div>-->
+          <div style="overflow: auto;">
+            <div style="float: right;">
+              <button type="button" id="prevBtn" onclick="nextPrev(-1)">
+                Previous
+              </button>
+              <button type="button" id="nextBtn" onclick="nextPrev(1)">
+                Next
+              </button>
+            </div>
+          </div>
+          <!-- Circles which indicates the steps of the form: -->
+          <div style="text-align: center; margin-top: 40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+          </div>
+        </form>
+      </section>
+    </section>
+  </body>
+</html>
