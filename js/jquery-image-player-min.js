@@ -45,7 +45,7 @@
       t.find(".jsvp-control-bar").css({ width: i }),
       t.find(".jsvp-hidden").remove();
     var l = "";
-    //this is like writting in the html file?
+    //this is like writting in the html file(?)
     (l += '<div class="jsvp-hidden">'), //def different stages of opacity. Not very important here
       (l += "<style>"),
       (l +=
@@ -62,7 +62,7 @@
       (l += '<input type="text" class="jsvp-tot" />'),
       (l += '<div class="jsvp-video_controls">'),
       (l +=
-        '<input type="text" min="0" max="100" step="2" class="jsvp-current_time" value="00:00" />'),
+        '<input type="text" min="0" max="100" step="2" class="jsvp-current_time" value="0:0" />'),
       (l +=
         '<input type="text" min="0" max="100" step="2" class="jsvp-LoadProgressFlag" value="false" />'),
       (l +=
@@ -98,7 +98,7 @@
           t.find(".jsvp-sec").val() >= t.find(".jsvp-tot").val(),
           startCounterSec(t, e, a);
       }),
-      //manage pausing when clik on pause icon
+      //manage pausing when click on pause icon
       a.button_pause
         .click(function () {
           $(this).hide(),
@@ -140,30 +140,47 @@
       range: "min",
       slide: function () {
         a.button_pause.click(); //isn't supposed to activate pause when slider used?*/
-        setTimeout(function () {
+        /*a.timer = setTimeout(function () {
           startCounterSecTimeout(t, e, a);
-        }, 0);
+        }, 20);*/
+        e.showCurrentTime;
+        e.showSliderTime;
+
+        /*setTimeout(function () {
+          startCounterSecTimeout(t, e, a);
+        }, 0);*/
       },
       stop: function (s, i) {
         (a.counterSec = i.value),
           t.find(".jsvp-audioPlayerWrapper").html("blank"),
           t.find(".jsvp-load_progress").val(0),
-          a.button_pause.click(), //play
-          (a.flagJumpAudio = !0),
-          jumpAudio(t, e, a),
-          setTimeout(function () {
+          a.button_pause.click();
+      }, //play
+      /*(a.flagJumpAudio = !0),
+          jumpAudio(
+            t,
+            e,
+            a
+          ); /*
+          (a.timer = setTimeout(function () {
+            startCounterSecTimeout(t, e, a);
+          }, 20));,
+          e.showCurrentTime;
+        e.showSliderTime;
+
+        /*setTimeout(function () {
             startCounterSecTimeout(
               t,
               e,
               a
             ); /*
-            a.button_pause.click();*/
-          }, 0); //before value was 20
-      },
+            a.button_pause.click();
+          }, 0); //before value was 20*/
+      /*},*/
     });
 
     //attempt to make a listener from click button when click, anywhere in the bar pause the video. -> doesn't work
-    t.find("jsvp-control-player-bar .jsvp-player-slider").click({
+    /*t.find("jsvp-control-player-bar .jsvp-player-slider").click({
       function() {
         if ((flagPlayPause = !0)) {
           $(a.button_pause).hide(),
@@ -171,7 +188,7 @@
             (a.flagPlayPause = !1);
         }
       },
-    });
+    });*/
 
     $("playerInnerWrapper").click({
       function() {
@@ -180,6 +197,13 @@
             $(this).parent().find(".jsvp-control-play").show(),
             (a.flagPlayPause = !1);
         }
+        //try to update time when clicking on slider
+        /*setTimeout(function () {
+          startCounterSecTimeout(t, e, a); /*
+          a.button_pause.click();
+        }, 0);
+        e.showCurrentTime;
+        e.showSliderTime;*/
       },
     });
   }
@@ -200,13 +224,10 @@
         t.find(".jsvp-load_progress").val(s),
         t.find(".jsvp-control-player-bar .jsvp-player-slider").slider({
           value: s,
-          animate: !0,
-          slide: a.button_pause.click() /*function (a) {
-            $(this).hide(),
-              $(this).parent().find(".jsvp-control-play").show(),
-              (a.flagPlayPause = !1);
-          },*/,
-        }); //add a condition when animated : pause video
+          animate: !0, //!0
+          slide: a.button_pause.click(),
+          /*timer: currentTimeArray*/
+        }); //add a condition to display the right time when clicking on slider
     } else
       parseInt(t.find(".jsvp-sec").val()) >=
         parseInt(t.find(".jsvp-tot").val()) &&

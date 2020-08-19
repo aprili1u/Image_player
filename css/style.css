@@ -254,12 +254,43 @@ input:checked + .slider:before {
   -webkit-font-smoothing: antialiased;
 }
 
-.content button.play:before {
-  /*adding a play class*/
+.content button.B:before {
+  /*adding a B class*/
   content: "Beginning of behavior";
 }
-
-.content button.pause:before {
-  /*adding a pause class*/
+.Beginning {
+  content: "Beginning of behavior";
+}
+.Ending {
   content: "End of behavior";
+}
+.content button.E:before {
+  /*adding a E class*/
+  content: "End of behavior";
+}
+
+table {
+  margin: 10px;
+  width: 200px;
+  border-collapse: collapse;
+}
+table th,
+table td {
+  text-align: left;
+  padding: 6px;
+}
+table,
+th,
+td {
+  border: 1px solid #000;
+}
+table th {
+  font-size: 1.4em;
+  /*font-weight: 100;*/
+  font-weight: small-caps;
+  color: #000000;
+  /*line-height: 20px;*/
+  margin: 10px 0 10px;
+  text-align: center;
+  background-color: #ccc;
 }
