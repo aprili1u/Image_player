@@ -43,7 +43,9 @@ $(function () {
       i += 1;
 
       var ligne =
-        '<tr><td><input type="text" id="fish" value="mot1" /> </td><td>' +
+        '<tr><td><input type="text" id="fish' +
+        i +
+        '" value="mot1" /> </td><td>' +
         '<input type="text" id="begin' +
         i +
         '" value="0:0" />' +
